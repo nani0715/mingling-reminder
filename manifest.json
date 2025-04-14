@@ -1,16 +1,14 @@
 
 {
-  "name": "冥鈴語錄提醒",
+  "name": "冥鈴語錄 App",
   "short_name": "冥鈴語錄",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#121124",
-  "theme_color": "#292942",
-  "icons": [
-    {
-      "src": "icon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+  "background_color": "#141424",
+  "theme_color": "#9b7bff",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
 }

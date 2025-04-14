@@ -1,7 +1,7 @@
 
 body {
-  background: #121124;
-  color: #fff;
+  background-color: #141424;
+  color: white;
   font-family: sans-serif;
   display: flex;
   justify-content: center;
@@ -12,12 +12,19 @@ body {
 .container {
   text-align: center;
 }
+#quote {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+#options.hidden {
+  display: none;
+}
 .option-btn {
   background: #292942;
   color: #fff;
   border: 1px solid #9b7bff;
-  padding: 0.8rem 1.2rem;
   margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
@@ -25,7 +32,4 @@ body {
 }
 .option-btn:hover {
   background: #4c3d75;
-}
-.hidden {
-  display: none;
 }
