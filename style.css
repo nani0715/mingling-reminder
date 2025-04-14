@@ -1,59 +1,91 @@
 
 body {
-  background-color: #121220;
-  color: #fff;
-  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background-color: #0e0e1a;
+  font-family: "Noto Sans TC", sans-serif;
+  color: white;
+}
+
+.container {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
-.container {
-  width: 90%;
+
+#card {
+  background: #1c1c2e;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #6b42c1;
   max-width: 400px;
+  width: 90%;
 }
-.quote-box {
-  background-color: #1c1b2e;
-  border: 2px solid #734fd4;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 0 20px rgba(115, 79, 212, 0.4);
-}
-.header {
+
+#profile {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
-.avatar {
-  width: 40px;
-  height: 40px;
+
+#avatar {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  margin-right: 0.5rem;
+  object-fit: cover;
+  margin-right: 12px;
 }
+
 .name {
+  display: flex;
+  flex-direction: column;
+}
+
+#charName {
   font-weight: bold;
-  flex-grow: 1;
+  font-size: 16px;
 }
-.icon {
-  font-size: 1.5rem;
+
+#quote {
+  font-size: 18px;
+  margin: 16px 0;
 }
+
 .option-btn {
-  display: block;
+  background: transparent;
+  border: 2px solid #a87df5;
+  color: white;
+  padding: 10px;
   width: 100%;
-  background: none;
-  border: 1px solid #734fd4;
-  color: #fff;
-  padding: 0.6rem;
+  margin: 6px 0;
   border-radius: 8px;
-  margin: 0.5rem 0;
-  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.2s;
 }
+
 .option-btn:hover {
-  background-color: #3c2b74;
+  background-color: #a87df5;
+  color: #1c1c2e;
 }
+
 .hidden {
   display: none;
+}
+
+#responseBox {
+  text-align: center;
+}
+
+#responseText {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+#backBtn {
+  background-color: #a87df5;
+  color: #1c1c2e;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }

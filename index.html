@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
-  <title>冥鈴語錄 App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <title>語錄 App</title>
 </head>
 <body>
   <div class="container">
-    <div class="quote-box">
-      <div class="header">
-        <img src="seir.png" alt="星耀頭像" class="avatar">
-        <div class="name">星耀 <span class="en">Seir</span></div>
-        <div class="icon">🐶</div>
+    <div id="card">
+      <div id="profile">
+        <img id="avatar" src="assets/loyi.png" alt="頭像">
+        <div class="name">
+          <div id="charName">洛伊 Loyi</div>
+          <div id="icon">☀️</div>
+        </div>
       </div>
-      <div id="quote">語錄啟動中…</div>
+      <div id="quote">語錄啟動中...</div>
       <div id="options" class="hidden">
         <button class="option-btn"></button>
         <button class="option-btn"></button>
         <button class="option-btn"></button>
+      </div>
+      <div id="responseBox" class="hidden">
+        <div id="responseText"></div>
+        <button id="backBtn">返回</button>
       </div>
     </div>
   </div>
