@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <title>冥鈴語錄 App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語錄互動App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/logic.js" defer></script>
 </head>
 <body>
   <div class="container">
+    <h1 id="title">語錄啟動中…</h1>
     <div id="quote-box">
-      <h1 id="quote">語錄啟動中…</h1>
-      <div id="options" class="hidden">
-        <button class="option-btn"></button>
-        <button class="option-btn"></button>
-        <button class="option-btn"></button>
-      </div>
+      <p id="character"></p>
+      <p id="quote"></p>
+    </div>
+    <div id="options">
+      <button class="option-btn" id="opt1"></button>
+      <button class="option-btn" id="opt2"></button>
+      <button class="option-btn" id="opt3"></button>
     </div>
   </div>
-  <script src="logic.js"></script>
 </body>
 </html>

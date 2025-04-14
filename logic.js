@@ -1,36 +1,34 @@
 
-let quotesData = {};
-fetch("quotes.json")
-  .then((response) => response.json())
-  .then((data) => {
-    quotesData = data;
-    initQuote();
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.getElementById("title");
+  const character = document.getElementById("character");
+  const quote = document.getElementById("quote");
+  const opt1 = document.getElementById("opt1");
+  const opt2 = document.getElementById("opt2");
+  const opt3 = document.getElementById("opt3");
 
-function initQuote() {
-  const now = new Date();
-  const hour = now.getHours();
-  let period = "morning";
-  if (hour >= 11 && hour < 15) period = "lunch";
-  else if (hour >= 17 && hour < 21) period = "evening";
-  else if (hour >= 21 || hour < 3) period = "night";
+  fetch("data/quotes.json")
+    .then(res => res.json())
+    .then(data => {
+      const time = new Date().getHours();
+      let quotes = [];
 
-  const quotes = quotesData[period];
-  if (!quotes || quotes.length === 0) {
-    document.getElementById("quote").innerText = "語錄啟動中…（這個時段還沒有語錄喔）";
-    return;
-  }
+      if (time < 11) quotes = data.morning;
+      else if (time < 15) quotes = data.lunch;
+      else if (time < 20) quotes = data.evening;
+      else quotes = data.night;
 
-  const quote = quotes[Math.floor(Math.random() * quotes.length)];
-  document.getElementById("quote").innerText = quote.text;
-  document.getElementById("options").classList.remove("hidden");
+      const entry = quotes[Math.floor(Math.random() * quotes.length)];
+      if (!entry) return;
 
-  const buttons = document.querySelectorAll(".option-btn");
-  buttons.forEach((btn, i) => {
-    btn.innerText = quote.options[i];
-    btn.onclick = () => {
-      document.getElementById("quote").innerText = quote.responses[i];
-      document.getElementById("options").classList.add("hidden");
-    };
-  });
-}
+      character.textContent = entry.character;
+      quote.textContent = entry.quote;
+      opt1.textContent = entry.options[0].text;
+      opt2.textContent = entry.options[1].text;
+      opt3.textContent = entry.options[2].text;
+
+      opt1.onclick = () => alert(entry.options[0].response);
+      opt2.onclick = () => alert(entry.options[1].response);
+      opt3.onclick = () => alert(entry.options[2].response);
+    });
+});
