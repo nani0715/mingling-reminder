@@ -1,35 +1,16 @@
 
 body {
-  margin: 0;
-  font-family: "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #0e0e1a, #1e1e2f);
-  color: #eeeeff;
+  background: #121124;
+  color: #fff;
+  font-family: sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  margin: 0;
 }
 .container {
   text-align: center;
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-}
-#title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-#quote-box {
-  margin-bottom: 2rem;
-}
-#character {
-  font-size: 1.2rem;
-  color: #d0a0ff;
-}
-#quote {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
 }
 .option-btn {
   background: #292942;
@@ -44,4 +25,7 @@ body {
 }
 .option-btn:hover {
   background: #4c3d75;
+}
+.hidden {
+  display: none;
 }
