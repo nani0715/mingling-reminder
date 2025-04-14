@@ -1,34 +1,45 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const title = document.getElementById("title");
-  const character = document.getElementById("character");
-  const quote = document.getElementById("quote");
-  const opt1 = document.getElementById("opt1");
-  const opt2 = document.getElementById("opt2");
-  const opt3 = document.getElementById("opt3");
+    const loader = document.getElementById("loader");
+    const app = document.getElementById("app");
+    const quoteText = document.getElementById("quote-text");
+    const optionsContainer = document.getElementById("options");
 
-  fetch("data/quotes.json")
-    .then(res => res.json())
-    .then(data => {
-      const time = new Date().getHours();
-      let quotes = [];
+    fetch("quotes.json")
+        .then(res => res.json())
+        .then(data => {
+            const now = new Date();
+            const hour = now.getHours();
+            let period = "morning";
+            if (hour >= 11 && hour < 15) period = "lunch";
+            else if (hour >= 15 && hour < 20) period = "evening";
+            else if (hour >= 20 || hour < 5) period = "night";
 
-      if (time < 11) quotes = data.morning;
-      else if (time < 15) quotes = data.lunch;
-      else if (time < 20) quotes = data.evening;
-      else quotes = data.night;
+            const quotes = data[period];
+            if (!quotes || quotes.length === 0) {
+                quoteText.textContent = "（這個時段還沒有語錄喔）";
+                return;
+            }
 
-      const entry = quotes[Math.floor(Math.random() * quotes.length)];
-      if (!entry) return;
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteText.textContent = randomQuote.quote;
 
-      character.textContent = entry.character;
-      quote.textContent = entry.quote;
-      opt1.textContent = entry.options[0].text;
-      opt2.textContent = entry.options[1].text;
-      opt3.textContent = entry.options[2].text;
+            optionsContainer.innerHTML = "";
+            randomQuote.options.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.textContent = opt.text;
+                btn.className = "option-btn";
+                btn.addEventListener("click", () => {
+                    quoteText.textContent = opt.response;
+                    optionsContainer.innerHTML = "";
+                });
+                optionsContainer.appendChild(btn);
+            });
 
-      opt1.onclick = () => alert(entry.options[0].response);
-      opt2.onclick = () => alert(entry.options[1].response);
-      opt3.onclick = () => alert(entry.options[2].response);
-    });
+            loader.classList.add("hidden");
+            app.classList.remove("hidden");
+        })
+        .catch(err => {
+            quoteText.textContent = "讀取語錄時發生錯誤。";
+            console.error(err);
+        });
 });

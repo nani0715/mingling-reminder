@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>語錄互動App</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <script src="scripts/logic.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冥鈴語錄</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="logic.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">語錄啟動中…</h1>
-    <div id="quote-box">
-      <p id="character"></p>
-      <p id="quote"></p>
+    <div class="loader" id="loader">
+        <div class="loading-box">
+            <p>語錄啟動中...</p>
+            <div class="dots">
+                <div></div><div></div><div></div>
+            </div>
+        </div>
     </div>
-    <div id="options">
-      <button class="option-btn" id="opt1"></button>
-      <button class="option-btn" id="opt2"></button>
-      <button class="option-btn" id="opt3"></button>
+    <div class="app hidden" id="app">
+        <div class="quote-box" id="quote-box">
+            <p id="quote-text">語錄載入中...</p>
+        </div>
+        <div class="options" id="options"></div>
     </div>
-  </div>
 </body>
 </html>

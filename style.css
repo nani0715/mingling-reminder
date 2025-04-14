@@ -1,47 +1,81 @@
-
 body {
-  margin: 0;
-  font-family: "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #0e0e1a, #1e1e2f);
-  color: #eeeeff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #1c1b2f, #0e0e1a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
-.container {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+
+.loading-box {
+    background: #1f1f2f;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #4c3d75;
+    text-align: center;
 }
-#quote-box {
-  margin-bottom: 2rem;
+
+.dots {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
-#character {
-  font-size: 1.2rem;
-  color: #d0a0ff;
+
+.dots div {
+    width: 12px;
+    height: 12px;
+    background: #6a4fc2;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
 }
-#quote {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
+
+.dots div:nth-child(2) { animation-delay: 0.2s; }
+.dots div:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
 }
+
+.app.hidden {
+    display: none;
+}
+
+.quote-box {
+    max-width: 90%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .option-btn {
-  background: #292942;
-  color: #fff;
-  border: 1px solid #9b7bff;
-  padding: 0.8rem 1.2rem;
-  margin: 0.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background: #292942;
+    color: #fff;
+    border: 1px solid #9b7bff;
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .option-btn:hover {
-  background: #4c3d75;
+    background: #4c3d75;
 }
