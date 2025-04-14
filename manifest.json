@@ -1,10 +1,10 @@
 {
-  "name": "冥鈴語錄App",
-  "short_name": "冥鈴App",
+  "name": "奈璃語錄App",
+  "short_name": "語錄App",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#111111",
-  "theme_color": "#111111",
+  "background_color": "#0e0e1a",
+  "theme_color": "#9b7bff",
   "icons": [
     {
       "src": "assets/icon.png",
