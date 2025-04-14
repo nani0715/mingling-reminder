@@ -1,15 +1,1 @@
-{
-    "name": "冥鈴語錄提醒",
-    "short_name": "冥鈴提醒",
-    "start_url": "index.html",
-    "display": "standalone",
-    "background_color": "#1c1b2f",
-    "theme_color": "#4c3d75",
-    "icons": [
-        {
-            "src": "icon.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ]
-}
+{"name": "奈璃語錄App", "short_name": "語錄App"}
