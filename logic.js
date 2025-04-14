@@ -8,11 +8,16 @@ fetch("quotes.json")
   });
 
 function initQuote() {
-  let period = "morning"; // 固定測試用
+  const now = new Date();
+  const hour = now.getHours();
+  let period = "morning";
+  if (hour >= 11 && hour < 15) period = "lunch";
+  else if (hour >= 17 && hour < 21) period = "evening";
+  else if (hour >= 21 || hour < 3) period = "night";
+
   const quotes = quotesData[period];
   if (!quotes || quotes.length === 0) {
-    document.getElementById("quote").innerText =
-      "語錄啟動中…（這個時段還沒有語錄喔）";
+    document.getElementById("quote").innerText = "語錄啟動中…（這個時段還沒有語錄喔）";
     return;
   }
 

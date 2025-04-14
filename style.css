@@ -1,73 +1,59 @@
 
 body {
-  background-color: #0f0f1a;
-  color: white;
-  font-family: 'Arial', sans-serif;
+  background-color: #121220;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-
 .container {
-  background-color: #1e1e2e;
-  border-radius: 10px;
-  padding: 2rem;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 10px #6c5ce7;
+  max-width: 400px;
 }
-
-.chat-header {
+.quote-box {
+  background-color: #1c1b2e;
+  border: 2px solid #734fd4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(115, 79, 212, 0.4);
+}
+.header {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-right: 0.5rem;
 }
-
 .name {
-  font-size: 1.2rem;
   font-weight: bold;
+  flex-grow: 1;
 }
-
-.tag {
-  margin-left: auto;
+.icon {
   font-size: 1.5rem;
 }
-
-#quote {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-#options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .option-btn {
-  background-color: #292942;
-  color: white;
-  padding: 0.8rem;
+  display: block;
+  width: 100%;
+  background: none;
+  border: 1px solid #734fd4;
+  color: #fff;
+  padding: 0.6rem;
   border-radius: 8px;
+  margin: 0.5rem 0;
   font-size: 1rem;
-  border: 1px solid #9b7bff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .option-btn:hover {
-  background-color: #4c3d75;
+  background-color: #3c2b74;
 }
-
 .hidden {
   display: none;
 }
