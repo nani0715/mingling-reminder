@@ -1,24 +1,35 @@
 
 fetch("quotes.json")
-    .then(response => response.json())
-    .then(data => {
-        const period = "lunch"; // 固定時段測試
-        const characters = Object.keys(data[period]);
-        const currentChar = characters[Math.floor(Math.random() * characters.length)];
-        const quotes = data[period][currentChar];
-        const selected = quotes[Math.floor(Math.random() * quotes.length)];
+  .then(response => response.json())
+  .then(data => {
+    const currentHour = new Date().getHours();
+    let period = "morning";
+    if (currentHour >= 12 && currentHour < 17) period = "lunch";
+    else if (currentHour >= 17 && currentHour < 21) period = "evening";
+    else if (currentHour >= 21 || currentHour < 5) period = "night";
 
-        document.getElementById("avatar").src = "assets/" + currentChar + ".png";
-        document.getElementById("charName").innerText = currentChar;
-        document.getElementById("quote-text").innerText = selected.text;
+    const name = "星耀";
+    const quotes = data[period][name];
+    const selected = quotes[Math.floor(Math.random() * quotes.length)];
 
-        const optionsDiv = document.getElementById("options");
-        selected.options.forEach((opt, idx) => {
-            const btn = document.createElement("button");
-            btn.textContent = opt;
-            btn.onclick = () => {
-                document.getElementById("response").innerText = selected.responses[idx];
-            };
-            optionsDiv.appendChild(btn);
-        });
+    document.getElementById("quote-text").innerText = selected.text;
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+    const responseDiv = document.getElementById("response");
+    responseDiv.innerText = "";
+
+    selected.options.forEach((opt, idx) => {
+      const btn = document.createElement("button");
+      btn.textContent = opt;
+      btn.onclick = () => {
+        responseDiv.innerText = selected.responses[idx];
+        optionsDiv.innerHTML = "";
+        document.getElementById("back-btn").style.display = "block";
+      };
+      optionsDiv.appendChild(btn);
     });
+
+    document.getElementById("back-btn").onclick = () => {
+      location.reload();
+    };
+});

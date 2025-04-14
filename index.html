@@ -1,19 +1,22 @@
-
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <title>角色提醒系統</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MingLing Reminder</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div id="app">
     <div class="card">
-        <img id="avatar" src="assets/starshine.png" alt="角色頭像" />
-        <h2 id="charName">星耀 🐶</h2>
-        <div id="quote-text">載入中…</div>
-        <div id="options"></div>
-        <div id="response"></div>
+      <img id="avatar" src="assets/seir.png" alt="avatar">
+      <h2 id="name">星耀 🐶</h2>
+      <p id="quote-text">載入中...</p>
+      <div id="options"></div>
+      <div id="response"></div>
+      <button id="back-btn" style="display:none;">返回</button>
     </div>
-    <script src="logic.js"></script>
+  </div>
+  <script src="logic.js"></script>
 </body>
 </html>
