@@ -1,34 +1,19 @@
 
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>語錄 App</title>
+    <meta charset="UTF-8" />
+    <title>角色提醒系統</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div id="card">
-      <div id="profile">
-        <img id="avatar" src="" alt="角色頭像" class="avatar" />
-        <div class="name-group">
-          <div id="charName" class="char-name">角色名稱</div>
-          <div id="emoji" class="char-emoji">🌙</div>
-        </div>
-      </div>
-      <div id="quote">語錄啟動中...</div>
-      <div id="options" class="hidden">
-        <button class="option-btn"></button>
-        <button class="option-btn"></button>
-        <button class="option-btn"></button>
-      </div>
-      <div id="response-box" class="hidden">
-        <p id="response-text"></p>
-        <button id="back-btn">返回</button>
-      </div>
+    <div class="card">
+        <img id="avatar" src="assets/starshine.png" alt="角色頭像" />
+        <h2 id="charName">星耀 🐶</h2>
+        <div id="quote-text">載入中…</div>
+        <div id="options"></div>
+        <div id="response"></div>
     </div>
-  </div>
-  <script src="logic.js"></script>
+    <script src="logic.js"></script>
 </body>
 </html>

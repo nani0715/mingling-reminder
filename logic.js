@@ -1,57 +1,24 @@
 
-let quotesData = {};
 fetch("quotes.json")
-  .then((res) => res.json())
-  .then((data) => {
-    quotesData = data;
-    initQuote();
-  });
+    .then(response => response.json())
+    .then(data => {
+        const period = "lunch"; // 固定時段測試
+        const characters = Object.keys(data[period]);
+        const currentChar = characters[Math.floor(Math.random() * characters.length)];
+        const quotes = data[period][currentChar];
+        const selected = quotes[Math.floor(Math.random() * quotes.length)];
 
-function initQuote() {
-  const hour = new Date().getHours();
-  let period = "morning";
-  if (hour >= 11 && hour < 15) period = "lunch";
-  else if (hour >= 17 && hour < 21) period = "evening";
-  else if (hour >= 21 || hour < 3) period = "night";
+        document.getElementById("avatar").src = "assets/" + currentChar + ".png";
+        document.getElementById("charName").innerText = currentChar;
+        document.getElementById("quote-text").innerText = selected.text;
 
-  const roleKeys = Object.keys(quotesData[period]);
-  const randomRole = roleKeys[Math.floor(Math.random() * roleKeys.length)];
-  const roleData = quotesData[period][randomRole];
-  const quote = roleData[Math.floor(Math.random() * roleData.length)];
-
-  document.getElementById("avatar").src = randomRole + ".png";
-  document.getElementById("charName").innerText = roleNameMap[randomRole];
-  document.getElementById("emoji").innerText = roleEmojiMap[randomRole];
-  document.getElementById("quote").innerText = quote.text;
-
-  const buttons = document.querySelectorAll(".option-btn");
-  buttons.forEach((btn, i) => {
-    btn.innerText = quote.options[i];
-    btn.onclick = () => {
-      document.getElementById("options").classList.add("hidden");
-      document.getElementById("response-box").classList.remove("hidden");
-      document.getElementById("response-text").innerText = quote.responses[i];
-    };
-  });
-
-  document.getElementById("options").classList.remove("hidden");
-}
-
-document.getElementById("back-btn").onclick = () => {
-  document.getElementById("response-box").classList.add("hidden");
-  initQuote();
-};
-
-const roleNameMap = {
-  "mingling": "冥鈴",
-  "loyi": "洛伊",
-  "rinshen": "燐聲",
-  "seir": "星耀"
-};
-
-const roleEmojiMap = {
-  "mingling": "🌙",
-  "loyi": "☀️",
-  "rinshen": "☁️",
-  "seir": "🐶"
-};
+        const optionsDiv = document.getElementById("options");
+        selected.options.forEach((opt, idx) => {
+            const btn = document.createElement("button");
+            btn.textContent = opt;
+            btn.onclick = () => {
+                document.getElementById("response").innerText = selected.responses[idx];
+            };
+            optionsDiv.appendChild(btn);
+        });
+    });
