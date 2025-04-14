@@ -1,46 +1,29 @@
 
 body {
-  margin: 0;
-  font-family: "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #0e0e1a, #1e1e2f);
+  background: #0e0e1a;
   color: #eeeeff;
+  font-family: "Microsoft JhengHei", sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 .container {
   text-align: center;
+  background: rgba(255,255,255,0.05);
   padding: 2rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-}
-#title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-#quote-box {
-  margin-bottom: 2rem;
-}
-#character {
-  font-size: 1.2rem;
-  color: #d0a0ff;
-}
-#quote {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
+  box-shadow: 0 0 20px #9b7bff;
 }
 .option-btn {
-  background: #292942;
-  color: #fff;
-  border: 1px solid #9b7bff;
-  padding: 0.8rem 1.2rem;
   margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  background: #292942;
+  color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 .option-btn:hover {
   background: #4c3d75;
