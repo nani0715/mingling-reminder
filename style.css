@@ -1,91 +1,79 @@
 
 body {
   margin: 0;
-  background-color: #0e0e1a;
+  background-color: #0f0f1a;
   font-family: "Noto Sans TC", sans-serif;
   color: white;
 }
-
 .container {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
-
 #card {
-  background: #1c1c2e;
+  background-color: #1c1c2e;
   padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px #6b42c1;
-  max-width: 400px;
+  border-radius: 12px;
   width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(123, 74, 255, 0.5);
 }
-
 #profile {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
-
-#avatar {
+.avatar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  object-fit: cover;
   margin-right: 12px;
 }
-
-.name {
+.name-group {
   display: flex;
   flex-direction: column;
 }
-
-#charName {
+.char-name {
   font-weight: bold;
   font-size: 16px;
 }
-
+.char-emoji {
+  font-size: 20px;
+}
 #quote {
   font-size: 18px;
-  margin: 16px 0;
+  margin: 1rem 0;
 }
-
 .option-btn {
   background: transparent;
-  border: 2px solid #a87df5;
   color: white;
-  padding: 10px;
+  padding: 0.6rem;
+  border: 2px solid #a87df5;
+  border-radius: 10px;
+  margin-bottom: 8px;
   width: 100%;
-  margin: 6px 0;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
 }
-
 .option-btn:hover {
   background-color: #a87df5;
   color: #1c1c2e;
 }
-
-.hidden {
-  display: none;
-}
-
-#responseBox {
+#response-box {
   text-align: center;
 }
-
-#responseText {
+#response-text {
   font-size: 18px;
   margin-bottom: 12px;
 }
-
-#backBtn {
+#back-btn {
   background-color: #a87df5;
-  color: #1c1c2e;
-  padding: 10px 20px;
+  color: white;
+  padding: 8px 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+}
+.hidden {
+  display: none;
 }
