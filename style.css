@@ -1,47 +1,73 @@
 
 body {
+  background-color: #0f0f1a;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  font-family: "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #0e0e1a, #1e1e2f);
-  color: #eeeeff;
+}
+
+.container {
+  background-color: #1e1e2e;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px #6c5ce7;
+}
+
+.chat-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.container {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-}
-#title {
-  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-#quote-box {
-  margin-bottom: 2rem;
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
-#character {
+
+.name {
   font-size: 1.2rem;
-  color: #d0a0ff;
+  font-weight: bold;
 }
+
+.tag {
+  margin-left: auto;
+  font-size: 1.5rem;
+}
+
 #quote {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .option-btn {
-  background: #292942;
-  color: #fff;
-  border: 1px solid #9b7bff;
-  padding: 0.8rem 1.2rem;
-  margin: 0.5rem;
+  background-color: #292942;
+  color: white;
+  padding: 0.8rem;
   border-radius: 8px;
   font-size: 1rem;
+  border: 1px solid #9b7bff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .option-btn:hover {
-  background: #4c3d75;
+  background-color: #4c3d75;
+}
+
+.hidden {
+  display: none;
 }
