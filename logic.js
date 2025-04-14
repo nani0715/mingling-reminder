@@ -1,28 +1,27 @@
 
 let quotesData = {};
 fetch("quotes.json")
-  .then(response => response.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     quotesData = data;
     initQuote();
   });
 
 function initQuote() {
-  const now = new Date();
-  const hour = now.getHours();
+  const hour = new Date().getHours();
   let period = "morning";
   if (hour >= 11 && hour < 15) period = "lunch";
   else if (hour >= 17 && hour < 21) period = "evening";
   else if (hour >= 21 || hour < 3) period = "night";
 
-  const characters = Object.keys(quotesData[period]);
-  const selectedChar = characters[Math.floor(Math.random() * characters.length)];
-  const quotes = quotesData[period][selectedChar];
-  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  const roleKeys = Object.keys(quotesData[period]);
+  const randomRole = roleKeys[Math.floor(Math.random() * roleKeys.length)];
+  const roleData = quotesData[period][randomRole];
+  const quote = roleData[Math.floor(Math.random() * roleData.length)];
 
-  document.getElementById("avatar").src = `assets/${selectedChar}.png`;
-  document.getElementById("charName").innerText = quote.name;
-  document.getElementById("emoji").innerText = quote.emoji;
+  document.getElementById("avatar").src = randomRole + ".png";
+  document.getElementById("charName").innerText = roleNameMap[randomRole];
+  document.getElementById("emoji").innerText = roleEmojiMap[randomRole];
   document.getElementById("quote").innerText = quote.text;
 
   const buttons = document.querySelectorAll(".option-btn");
@@ -36,7 +35,23 @@ function initQuote() {
   });
 
   document.getElementById("options").classList.remove("hidden");
-  document.getElementById("response-box").classList.add("hidden");
-
-  document.getElementById("back-btn").onclick = () => initQuote();
 }
+
+document.getElementById("back-btn").onclick = () => {
+  document.getElementById("response-box").classList.add("hidden");
+  initQuote();
+};
+
+const roleNameMap = {
+  "mingling": "冥鈴",
+  "loyi": "洛伊",
+  "rinshen": "燐聲",
+  "seir": "星耀"
+};
+
+const roleEmojiMap = {
+  "mingling": "🌙",
+  "loyi": "☀️",
+  "rinshen": "☁️",
+  "seir": "🐶"
+};
